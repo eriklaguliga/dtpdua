@@ -317,6 +317,23 @@
 
         return $namabidang->result_array();
       }
+	
+	public function last_record(){
+            $last_row = $this->db->order_by('id_bidang',"DESC")
+            ->limit(1)
+            ->get('tbl_bidang')
+            ->row();
+            $bidang = $last_row->id_bidang;
+            return $bidang;
+      }
+	public function last_record_seksi(){
+            $last_row = $this->db->order_by('id_seksi',"DESC")
+            ->limit(1)
+            ->get('tbl_seksi')
+            ->row();
+            $seksi = $last_row->id_seksi;
+            return $seksi;
+      }
    
    }
    

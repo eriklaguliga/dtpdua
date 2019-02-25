@@ -22,6 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | 1. Packages
 | 2. Libraries
+
 | 3. Drivers
 | 4. Helper files
 | 5. Custom config files
@@ -54,11 +55,24 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'email', 'session');
 |
 | You can also supply an alternative library name to be assigned
+
 | in the controller:
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('Template','database','session','fpdf','table','form_validation');
+
+$autoload['libraries'] = array('Template','database','session','table','form_validation');
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 | -------------------------------------------------------------------
@@ -66,6 +80,7 @@ $autoload['libraries'] = array('Template','database','session','fpdf','table','f
 | -------------------------------------------------------------------
 | These classes are located in system/libraries/ or in your
 | application/libraries/ directory, but are also placed inside their
+
 | own subdirectory and they extend the CI_Driver_Library class. They
 | offer multiple interchangeable driver options.
 |
@@ -75,6 +90,7 @@ $autoload['libraries'] = array('Template','database','session','fpdf','table','f
 |
 | You can also supply an alternative property name to be assigned in
 | the controller:
+
 |
 |	$autoload['drivers'] = array('cache' => 'cch');
 |

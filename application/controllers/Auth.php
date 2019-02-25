@@ -66,7 +66,7 @@ class Auth extends CI_Controller {
                                 $this->db->insert('tbl_bidang', $tbl_bidang);
                                 $tbl_seksi = array();
                                 $tbl_seksi['nama_seksi'] = $entries[0][$entries[0][25]][0];
-                                $tbl_seksi['id_bidang'] = $hasil->id_bidang;
+                                $tbl_seksi['id_bidang'] = $this->Model_permintaan->last_record();
                                 $this->db->select('id_seksi');
                                 $this->db->from('tbl_seksi');
                                 $this->db->where('nama_seksi', $tbl_seksi['nama_seksi']);
@@ -93,8 +93,8 @@ class Auth extends CI_Controller {
                             $tbl_login['email'] =$entries[0][$entries[0][1]][0];
                             $tbl_login['level']="1";
                             $tbl_login['job_title'] =$entries[0][$entries[0][23]][0];
-                            $tbl_login['sub_dep'] =$entries[0][$entries[0][25]][0];
-                            $tbl_login['id_bidang']=$hasil->id_bidang;
+                            //$tbl_login['sub_dep'] =$entries[0][$entries[0][25]][0];
+                            $tbl_login['id_bidang']=$this->Model_permintaan->last_record_seksi();
                             $data1 = $this->db->query("SELECT * FROM tbl_login WHERE username = ".$entries[0][$entries[0][4]][0])->row_array();
                             if ($data1 > 0){
                                 $this->session->set_userdata($data1);
